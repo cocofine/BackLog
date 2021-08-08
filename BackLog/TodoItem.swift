@@ -35,7 +35,7 @@ struct TodoItem: View {
                     .padding()
             }
         }
-        .background(data.todos[currentIndex].bgColor.opacity(0.5))
+        .background(Color.colorWithHex(data.todos[currentIndex].bgColor, 0.5))
         
     }
 }
@@ -43,7 +43,7 @@ struct TodoItem: View {
 struct TodoItem_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TodoItem(todo: TodoModel(id: 0, content: "", bgColor: Color.random()))
+            TodoItem(todo: TodoModel(id: 0, content: "", bgColor: "#2db7b5"))
                 .environmentObject(TodoData())
         }
         .previewLayout(.fixed(width: 300, height: 100))

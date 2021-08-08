@@ -11,7 +11,8 @@ struct TodoList: View {
     
     @EnvironmentObject var data: TodoData
     var todoArray: [TodoModel] {
-        sort(originArray: data.todos)
+//        sort(originArray: data.todos)
+        data.todos
     }
     
     var body: some View {
@@ -23,21 +24,23 @@ struct TodoList: View {
                 
                 List {
                     ForEach(todoArray) { todo in
-                        NavigationLink(destination:TodoDetail(todo: todo)) {
+                        let currentIndex = data.todos.firstIndex(where: { $0.id == todo.id })!
+                        NavigationLink(destination:TodoDetail(todo: todo, finish: data.todos[currentIndex].finish)) {
                             TodoItem(todo: todo)
                         }
                     }
                 }
                 .navigationTitle("BackLog")
                 .onAppear {
-                    data.todos = sort(originArray: data.todos)
+//                    data.todos = sort(originArray: data.todos)
                 }
                 
                 
                 
                 Button(action: {
                     let model = TodoModel(id: data.todos.count)
-                    data.todos.append(model)
+                    data.todos.insert(model, at: 0)
+                    addBackLog(model: model)
                 }) {
                     ZStack {
                         Group {
