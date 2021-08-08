@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		74A5815826BD7B2800BA3745 /* BackLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5815726BD7B2800BA3745 /* BackLogApp.swift */; };
-		74A5815A26BD7B2800BA3745 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5815926BD7B2800BA3745 /* ContentView.swift */; };
 		74A5815C26BD7B2900BA3745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A5815B26BD7B2900BA3745 /* Assets.xcassets */; };
 		74A5815F26BD7B2900BA3745 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A5815E26BD7B2900BA3745 /* Preview Assets.xcassets */; };
 		74A5816A26BD7B2900BA3745 /* BackLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5816926BD7B2900BA3745 /* BackLogTests.swift */; };
 		74A5817526BD7B2A00BA3745 /* BackLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5817426BD7B2A00BA3745 /* BackLogUITests.swift */; };
+		74A5819126BD7C3B00BA3745 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5819026BD7C3B00BA3745 /* TodoItem.swift */; };
+		74A5819E26BD7C5B00BA3745 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5819D26BD7C5B00BA3745 /* TodoList.swift */; };
+		74A581A626BD7D4300BA3745 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A581A526BD7D4300BA3745 /* ContentView.swift */; };
+		74A581AE26BD7DDA00BA3745 /* TodoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A581AD26BD7DDA00BA3745 /* TodoDetail.swift */; };
+		74A581B326BD8C7200BA3745 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A581B226BD8C7200BA3745 /* TodoModel.swift */; };
+		74A581B826BE4EBB00BA3745 /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A581B726BE4EBB00BA3745 /* ColorExtention.swift */; };
+		74A581C526BE5A0600BA3745 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A581C426BE5A0600BA3745 /* ColorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +41,6 @@
 /* Begin PBXFileReference section */
 		74A5815426BD7B2800BA3745 /* BackLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A5815726BD7B2800BA3745 /* BackLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLogApp.swift; sourceTree = "<group>"; };
-		74A5815926BD7B2800BA3745 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74A5815B26BD7B2900BA3745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74A5815E26BD7B2900BA3745 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74A5816026BD7B2900BA3745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +50,13 @@
 		74A5817026BD7B2900BA3745 /* BackLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A5817426BD7B2A00BA3745 /* BackLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLogUITests.swift; sourceTree = "<group>"; };
 		74A5817626BD7B2A00BA3745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A5819026BD7C3B00BA3745 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		74A5819D26BD7C5B00BA3745 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		74A581A526BD7D4300BA3745 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		74A581AD26BD7DDA00BA3745 /* TodoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetail.swift; sourceTree = "<group>"; };
+		74A581B226BD8C7200BA3745 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		74A581B726BE4EBB00BA3745 /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
+		74A581C426BE5A0600BA3745 /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				74A5815726BD7B2800BA3745 /* BackLogApp.swift */,
-				74A5815926BD7B2800BA3745 /* ContentView.swift */,
+				74A581A526BD7D4300BA3745 /* ContentView.swift */,
+				74A5819D26BD7C5B00BA3745 /* TodoList.swift */,
+				74A5819026BD7C3B00BA3745 /* TodoItem.swift */,
+				74A581AD26BD7DDA00BA3745 /* TodoDetail.swift */,
+				74A581B226BD8C7200BA3745 /* TodoModel.swift */,
+				74A581C426BE5A0600BA3745 /* ColorButton.swift */,
+				74A581B726BE4EBB00BA3745 /* ColorExtention.swift */,
 				74A5815B26BD7B2900BA3745 /* Assets.xcassets */,
 				74A5816026BD7B2900BA3745 /* Info.plist */,
 				74A5815D26BD7B2900BA3745 /* Preview Content */,
@@ -259,8 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74A5815A26BD7B2800BA3745 /* ContentView.swift in Sources */,
+				74A581AE26BD7DDA00BA3745 /* TodoDetail.swift in Sources */,
+				74A5819E26BD7C5B00BA3745 /* TodoList.swift in Sources */,
 				74A5815826BD7B2800BA3745 /* BackLogApp.swift in Sources */,
+				74A581B326BD8C7200BA3745 /* TodoModel.swift in Sources */,
+				74A581A626BD7D4300BA3745 /* ContentView.swift in Sources */,
+				74A5819126BD7C3B00BA3745 /* TodoItem.swift in Sources */,
+				74A581B826BE4EBB00BA3745 /* ColorExtention.swift in Sources */,
+				74A581C526BE5A0600BA3745 /* ColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

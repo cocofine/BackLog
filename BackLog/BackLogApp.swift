@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct BackLogApp: App {
+    
+    @StateObject private var todoData = TodoData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(todoData)
         }
     }
 }
