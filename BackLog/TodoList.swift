@@ -25,7 +25,7 @@ struct TodoList: View {
                 List {
                     ForEach(todoArray) { todo in
                         let currentIndex = data.todos.firstIndex(where: { $0.id == todo.id })!
-                        NavigationLink(destination:TodoDetail(todo: todo, finish: data.todos[currentIndex].finish)) {
+                        NavigationLink(destination:TodoDetail(todo: todo, index: 0, finish: data.todos[currentIndex].finish)) {
                             TodoItem(todo: todo)
                         }
                     }

@@ -11,6 +11,8 @@ struct TodoDetail: View {
     
     var todo: TodoModel
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @EnvironmentObject var data: TodoData
     var colors: [String] {
         var colors = data.colorArray
@@ -24,13 +26,21 @@ struct TodoDetail: View {
     
     static var count = 10
     
-    @State private var isSet: Bool = false
-    @State private var index = 0
+    @State var index: Int
     @State var finish: Bool
-    
+        
     var body: some View {
 
         VStack {
+            
+            Button(action:{
+                self.presentationMode.wrappedValue.dismiss()
+//                data.todos.remove(at: currentIndex)
+//                deleteBackLog(model: data.todos[currentIndex])
+            })
+            {
+                Text("Delete")
+            }
             
             Button(action: {
                 finish = !finish
@@ -46,19 +56,15 @@ struct TodoDetail: View {
             
             HStack {
                 ForEach(0..<TodoDetail.count) { i in
-                    let num: CGFloat = index == i ? 3 : 0
-                    Button(action: {
-                        isSet = !isSet
-                        index = i
-                        data.todos[currentIndex].bgColor = colors[i]
-                    }) {
-                        Color.colorWithHex(colors[i], 0.5)
-                    }
-                    .frame(width: 30, height: 30)
-                    .cornerRadius(15)
-                    .overlay(Circle().stroke(Color.white, lineWidth: num))
-                    .shadow(radius: num)
+                    ColorButton(isSet: .constant(index == i), index: i, currentColor: colors[i], current: $index, currentItem: currentIndex)
+                }
+                
+                Button(action:{
                     
+                })
+                {
+                    let str = String(index)
+                    Text(str)
                 }
             }
             .padding()
@@ -87,7 +93,7 @@ struct TodoDetail: View {
 
 struct TodoDetail_Previews: PreviewProvider {
     static var previews: some View {
-        TodoDetail(todo: TodoModel(id: 0, content: "", bgColor: "#2db7b5"), finish: false)
+        TodoDetail(todo: TodoModel(id: 0, content: "", bgColor: "#2db7b5"), index: 0, finish: false)
             .environmentObject(TodoData())
     }
 }
