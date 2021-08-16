@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TodoList: View {
     
+    
     @EnvironmentObject var data: TodoData
     var todoArray: [TodoModel] {
 //        sort(originArray: data.todos)
