@@ -34,6 +34,7 @@ struct TodoList: View {
                 .navigationTitle("BackLog")
                 .onAppear {
 //                    data.todos = sort(originArray: data.todos)
+                    updateBackLog(array: data.todos)
                 }
                 
                 
