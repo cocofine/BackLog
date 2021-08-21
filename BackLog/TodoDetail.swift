@@ -12,6 +12,7 @@ struct TodoDetail: View {
     var todo: TodoModel
     
     @EnvironmentObject var data: TodoData
+    @Environment(\.presentationMode) var presentationMode
     var colors: [String] {
         var colors = data.colorArray
         colors.removeFirst()
@@ -31,6 +32,13 @@ struct TodoDetail: View {
     var body: some View {
 
         VStack {
+            
+            Button(action:{
+                self.presentationMode.wrappedValue.dismiss()
+            })
+            {
+                Text("Back")
+            }
             
             Button(action: {
                 finish = !finish
