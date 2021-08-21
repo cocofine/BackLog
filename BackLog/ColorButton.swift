@@ -8,33 +8,33 @@
 import SwiftUI
 
 struct ColorButton: View {
-    @EnvironmentObject var data: TodoData
-    @Binding var isSet: Bool
-    var index: Int
-    var currentColor: String
-    @Binding var current: Int
-    var currentItem: Int
+    
+    @State var isSet: Bool
+    @Binding var index: Int
+    var currentColor = Color.random()
     
     
     var body: some View {
 
         Button(action: {
             isSet = !isSet
-            current = index
-            data.todos[currentItem].bgColor = currentColor
-        }) {
-            Color.colorWithHex(currentColor, 0.5)
+//            index = index
+        })
+        {
+            let num: CGFloat = isSet ? 3 : 0
+            currentColor
+                .frame(width: 30, height: 30)
+                .cornerRadius(15)
+                .overlay(Circle().stroke(Color.white, lineWidth: num))
+                .shadow(radius: num
+                )
         }
-        .frame(width: 30, height: 30)
-        .cornerRadius(15)
-        .overlay(Circle().stroke(Color.white, lineWidth: isSet ? 3 : 0))
-        .shadow(radius: isSet ? 3 : 0)
-        
+
     }
 }
 
 struct ColorButton_Previews: PreviewProvider {
     static var previews: some View {
-        ColorButton(isSet: .constant(false), index: 0, currentColor: "#2db7b5", current: .constant(0), currentItem: 0)
+        ColorButton(isSet: false, index: .constant(0))
     }
 }
